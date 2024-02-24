@@ -1,3 +1,7 @@
-# Catalog
+# LeetCode Problems
 
-[1. Two Sum](1.%20Two%20Sum/solution.md)
+A Collection of LeetCode problems and their respective solutions
+
+## Catalog
+
+[1. Two Sum](1.%20Two%20Sum/Solution.md)
