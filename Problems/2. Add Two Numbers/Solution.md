@@ -1,6 +1,5 @@
 # [2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
 
-## Description
 
 You are given two non-empty linked lists representing two non-negative integers.
 

@@ -1,7 +1,5 @@
 # [NUM TITLE](https://leetcode.com/problems/)
 
-## Description
-
 #### Example
 
     Input:
