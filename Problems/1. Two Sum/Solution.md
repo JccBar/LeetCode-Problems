@@ -1,4 +1,6 @@
-# Description
+#[1. Two Sum](https://leetcode.com/problems/two-sum)
+
+## Description
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
@@ -144,11 +146,10 @@ public:
         }
         sort(sortedNums.begin(), sortedNums.end());
 
-        // Declare the 2 pointers 
+        // Declare 2 pointers 
         int l = 0;
         int r = nums.size() - 1;
 
-        // Left pointer moves to the right while right pointer moes to the left
         while (l < r) 
         {
             int sum = sortedNums[l].first + sortedNums[r].first;
@@ -158,11 +159,11 @@ public:
             } 
             else if (sum < target) 
             {
-                ++l;
+                ++l;  // Left pointer moves to the right
             } 
             else // sum > target
             {
-                --r;
+                --r; // Right pointer moves to the left
             }
         }
         return {}; // No solution found!
