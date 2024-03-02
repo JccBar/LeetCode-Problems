@@ -84,7 +84,7 @@ public:
 #### Complexity
 
 - Time complexity: $O(n)$;
-- Space Complexity: $O(n)$; 
+- Space Complexity: $O(n)$;
   
 ## 3. One-pass hash table
 
