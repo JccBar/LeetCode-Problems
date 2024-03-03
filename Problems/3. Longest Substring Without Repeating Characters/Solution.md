@@ -38,11 +38,11 @@ Given a string `s`, find the length of the longest substring without repeating c
 
 ## Optimized sliding window
 
-- Use two pointers to track the start and end of the current substring being considered.
+- Use two pointers to track the `start` and `end` of the current substring.
 - Use an auxiliary array to store the last index of each character encountered.
-- Iterate through the input string using the end pointer.
-- Update the start pointer whenever a repeating character is encountered.
-- Return the maximum result recorded.
+- Iterate through the input string `s` using the `end` pointer.
+- Update the `start` pointer whenever a repeating character is encountered.
+- Return the maximum result found.
 
 ```C++
 class Solution 
