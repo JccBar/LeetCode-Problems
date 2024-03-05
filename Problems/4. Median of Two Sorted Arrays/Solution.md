@@ -17,10 +17,10 @@ The overall run time complexity should be `O(log (m+n))`.
     Output: 2.50000
     Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
 
-## X solution
+## WIP solution
 
 ```C++
-CODE BLOCK
+WIP
 ```
 
 #### Complexity
