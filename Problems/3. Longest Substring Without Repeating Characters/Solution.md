@@ -21,22 +21,7 @@ Given a string `s`, find the length of the longest substring without repeating c
     Explanation: The answer is "wke", with the length of 3.
     Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
-## Brute force
-
-*WIP*
-
-- Time complexity: $O(n^3)$;
-- Space Complexity: $O(n)$;
-
 ## Sliding window
-
-*WIP*
-
-
-- Time complexity: $O(n)$;
-- Space Complexity: $O(n)$;
-
-## Optimized sliding window
 
 - Use two pointers to track the `start` and `end` of the current substring.
 - Use an auxiliary array to store the last index of each character encountered.
