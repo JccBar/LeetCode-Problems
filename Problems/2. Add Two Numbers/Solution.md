@@ -24,17 +24,17 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 5. Delete the initial dummy node and return the resulting linked list that starts from the next node, which contains the sum of the two numbers.
 
 ```C++
-class Solution 
+class Solution
 {
 public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
     {
         ListNode* dummyHead = new ListNode(0);
         ListNode* tail = dummyHead;
         int carry = 0;
 
         // Iterate through every node
-        while (l1 != nullptr || l2 != nullptr || carry != 0) 
+        while (l1 != nullptr || l2 != nullptr || carry != 0)
         {
             // Get digits of current nodes (l1 and l2)
             int digit1 = (l1 != nullptr) ? l1->val : 0;
@@ -48,7 +48,7 @@ public:
             // Create new node and append it to the linked list
             ListNode* newNode = new ListNode(digit);
             tail->next = newNode;
-            
+
             // Move to next node if there is one
             l1 = (l1 != nullptr) ? l1->next : nullptr;
             l2 = (l2 != nullptr) ? l2->next : nullptr;

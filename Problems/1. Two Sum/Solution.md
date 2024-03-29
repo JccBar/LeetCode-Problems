@@ -18,16 +18,16 @@ You can return the answer in any order.
 2. If a pair of elements is found that add up to the target sum, return their indices.
 
 ```C++
-class Solution 
+class Solution
 {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) 
+    vector<int> twoSum(vector<int>& nums, int target)
     {
-        for (int i = 0; i < nums.size(); ++i) 
+        for (int i = 0; i < nums.size(); ++i)
         {
-            for (int j = i + 1; j < nums.size(); ++j) 
+            for (int j = i + 1; j < nums.size(); ++j)
             {
-                if (nums[i] + nums[j] == target) 
+                if (nums[i] + nums[j] == target)
                 {
                     return {i, j};
                 }
@@ -54,24 +54,24 @@ public:
     2. If no two elements are found that add up to the target sum, return an empty array.
 
 ```C++
-class Solution 
+class Solution
 {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) 
+    vector<int> twoSum(vector<int>& nums, int target)
     {
         unordered_map<int, int> mp;
         int n = nums.size();
         // Populate the hash table:
-        for (int i = 0; i < n; ++i) 
+        for (int i = 0; i < n; ++i)
         {
             mp[nums[i]] = i;
         }
 
         // Find the complement:
-        for (int i = 0; i < n; ++i) 
+        for (int i = 0; i < n; ++i)
         {
             int complement = target - nums[i];
-            if (mp.count(complement) && mp[complement] != i) 
+            if (mp.count(complement) && mp[complement] != i)
             {
                 return {i, mp[complement]};
             }
@@ -85,7 +85,7 @@ public:
 
 - Time complexity: $O(n)$;
 - Space Complexity: $O(n)$;
-  
+
 ## 3. One-pass hash table
 
 1. Create an empty hash table to store the elements and their indices.
@@ -97,13 +97,13 @@ public:
 3. If no two elements are found that add up to the target sum, return an empty array.
 
 ```C++
-class Solution 
+class Solution
 {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) 
+    vector<int> twoSum(vector<int>& nums, int target)
     {
         unordered_map<int, int> mp;
-        for (int i = 0; i < nums.size(); ++i) 
+        for (int i = 0; i < nums.size(); ++i)
         {
             int complement = target - nums[i];
             if (mp.count(complement))  // Check if the complement exists in the hash map
@@ -132,33 +132,33 @@ public:
 4. When the sum equals the target, return the indices of the elements in the original unsorted array.
 
 ```C++
-class Solution 
+class Solution
 {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) 
+    vector<int> twoSum(vector<int>& nums, int target)
     {
         vector<pair<int, int>> sortedNums;
-        for (int i = 0; i < nums.size(); i++) 
+        for (int i = 0; i < nums.size(); i++)
         {
             sortedNums.push_back({nums[i], i});
         }
         sort(sortedNums.begin(), sortedNums.end());
 
-        // Declare 2 pointers 
+        // Declare 2 pointers
         int l = 0;
         int r = nums.size() - 1;
 
-        while (l < r) 
+        while (l < r)
         {
             int sum = sortedNums[l].first + sortedNums[r].first;
-            if (sum == target) 
+            if (sum == target)
             {
                 return {sortedNums[l].second, sortedNums[r].second};
-            } 
-            else if (sum < target) 
+            }
+            else if (sum < target)
             {
                 ++l;  // Left pointer moves to the right
-            } 
+            }
             else // sum > target
             {
                 --r; // Right pointer moves to the left

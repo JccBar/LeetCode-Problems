@@ -26,9 +26,10 @@ The overall run time complexity should be $O(log(m+n))$.
 - If the total number of elements is odd, the median is the larger of the two left-side values. If it's even, the median is the average of the two central values (the largest left-side value and the smallest right-side value). If a proper split isn't found, return an error or default value.
 
 ```C++
-class Solution {
+class Solution
+{
 public:
-    double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2) 
+    double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2)
     {
         int n1 = nums1.size();
         int n2 = nums2.size();
@@ -39,7 +40,7 @@ public:
 
         int low = 0, high = n1;
 
-        while (low <= high) 
+        while (low <= high)
         {
             int partition1 = (low + high) / 2;
             int partition2 = half - partition1;
@@ -50,22 +51,22 @@ public:
             int maxLeft2 = (partition2 == 0) ? INT_MIN : nums2[partition2 - 1];
             int minRight2 = (partition2 == n2) ? INT_MAX : nums2[partition2];
 
-            if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1) 
+            if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1)
             {
-                if (total % 2 == 0) 
+                if (total % 2 == 0)
                 {
                     return (std::max(maxLeft1, maxLeft2) + std::min(minRight1, minRight2)) / 2.0;
-                } 
+                }
                 else
                 {
                     return std::max(maxLeft1, maxLeft2);
                 }
-            } 
-            else if (maxLeft1 > minRight2) 
+            }
+            else if (maxLeft1 > minRight2)
             {
                 high = partition1 - 1;
-            } 
-            else 
+            }
+            else
             {
                 low = partition1 + 1;
             }

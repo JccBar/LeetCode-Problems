@@ -30,20 +30,20 @@ Given a string `s`, find the length of the longest substring without repeating c
 - Return the maximum result found.
 
 ```C++
-class Solution 
+class Solution
 {
 public:
-    int lengthOfLongestSubstring(std::string s) 
+    int lengthOfLongestSubstring(std::string s)
     {
-        int result = 0; 
+        int result = 0;
         int start = 0;
         vector<int> lastIndex(256, -1);
-  
-        for (int end = 0; end < s.size(); ++end) 
+
+        for (int end = 0; end < s.size(); ++end)
         {
             start = max(start, lastIndex[s[end]] + 1);
             result = max(result, end - start + 1);
-    
+
             lastIndex[s[end]] = end;
         }
         return result;
